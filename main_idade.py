@@ -1,5 +1,5 @@
 import flet as ft
-
+import datetime
 
 # Configuração
 
@@ -9,24 +9,24 @@ def main(page: ft.Page):
     page.window.width = 375
     page.window.height = 667
 
+
+
     # Funções
 
-    def idade_real(e):
-        soma = int(num1.value) + int(num2.value)
-        txt_resultado.value = f'Resultado = {soma}'
+    def mostrar_resultado(e):
+        nascimento = int(input(num1.value))
+        data_atual = 100
+        idade = data_atual - nascimento
+        if idade < 0:
+            'A idade é inválida.'
+        elif 0 > nascimento < 18:
+            'Menor de idade.'
+        elif nascimento >= 18:
+            'Maior de idade.'
+        txt_resultado.value = f'Resultado = {idade}'
         page.update()
 
-
-    # def mostrar_resultado(e):
-    #
-    #     par_impar = int(num1.value) % 2
-    #     if par_impar == 0:
-    #         txt_resultado.value = f'Número par {num1.value}'
-    #     else:
-    #         txt_resultado.value = f'Número impar {num1.value}'
-    #
-    #     page.update()
-
+    # Fields
 
     num1 = ft.TextField(label="Digite um número" )
     btn_enviar = ft.FilledButton(text="Enviar",
@@ -35,13 +35,7 @@ def main(page: ft.Page):
                                  )
     txt_resultado = ft.Text(value="")
 
-
-    # Botões
-
-    nascimento = ft.TextField(label='digite a sua data de nascimento (ex: 23/04/1998')
-    idade = ft.TextField(label='digite a sua data de nascimento (ex: 23/04/1998')
-
-
+    nascimento = ft.TextField(label='Digite o seu ano de nascimento')
 
     txt_resultado = ft.Text("")
 
@@ -51,7 +45,6 @@ def main(page: ft.Page):
         ft.Column(
             [
                 nascimento,
-                idade,
                 btn_enviar,
                 txt_resultado,
             ]
