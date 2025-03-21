@@ -4,7 +4,7 @@ import flet as ft
 # Configuração
 
 def main(page: ft.Page):
-    page.title = "Calculadora "
+    page.title = "Calculadora"
     page.theme_mode = ft.ThemeMode.DARK # ou ft.ThemeMode.DARK
     page.window.width = 375
     page.window.height = 667
@@ -15,6 +15,7 @@ def main(page: ft.Page):
         soma = int(num1.value) + int(num2.value)
         txt_resultado.value = f'Resultado = {soma}'
         page.update()
+
 
 
     def subtrair(e):
@@ -30,11 +31,11 @@ def main(page: ft.Page):
         page.update()
 
 
+
     def dividir(e):
         divide = int(num1.value) / int(num2.value)
         txt_resultado.value = f'Resultado = {divide}'
         page.update()
-
 
 
 
@@ -76,3 +77,5 @@ def main(page: ft.Page):
 
 
 ft.app(main)
+
+import flet as ft
