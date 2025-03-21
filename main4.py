@@ -2,6 +2,7 @@ import flet as ft
 
 
 # Configuração
+
 def main(page: ft.Page):
     page.title = "Calculadora "
     page.theme_mode = ft.ThemeMode.DARK # ou ft.ThemeMode.DARK
@@ -9,8 +10,6 @@ def main(page: ft.Page):
     page.window.height = 667
 
     # Funções
-
-
 
     def somar(e):
         soma = int(num1.value) + int(num2.value)
@@ -40,6 +39,7 @@ def main(page: ft.Page):
 
 
     # Botões
+
     num1 = ft.TextField(label='digite um numero')
     num2 = ft.TextField(label='digite um numero')
 
@@ -56,11 +56,9 @@ def main(page: ft.Page):
                                  on_click=dividir)
 
 
-
     txt_resultado = ft.Text("")
 
     # Componentes
-
 
     page.add(
         ft.Column(
