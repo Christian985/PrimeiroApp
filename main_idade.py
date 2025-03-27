@@ -29,13 +29,11 @@ def main(page: ft.Page):
     # Fields
 
     num1 = ft.TextField(label="Digite um número" )
+    nascimento = ft.TextField(label='Digite o seu ano de nascimento')
     btn_enviar = ft.FilledButton(text="Enviar",
                                  width=page.window.width,
                                  on_click=mostrar_resultado,
                                  )
-    txt_resultado = ft.Text(value="")
-
-    nascimento = ft.TextField(label='Digite o seu ano de nascimento')
 
     txt_resultado = ft.Text("")
 
