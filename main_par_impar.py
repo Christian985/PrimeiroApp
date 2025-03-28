@@ -3,7 +3,7 @@ import flet as ft
 
 def main(page: ft.Page):
     page.title = "Par ou impar"
-    page.theme_mode = ft.ThemeMode.DARK # ou ft.ThemeMode.DARK
+    page.theme_mode = ft.ThemeMode.DARK # ou ft.ThemeMode.DARK👌
     page.window.width = 375
     page.window.height = 667
 
