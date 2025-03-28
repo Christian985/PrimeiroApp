@@ -15,25 +15,50 @@ def main(page: ft.Page):
 
     def mostrar_resultado(e):
         ano_nascimento = num1.value
-        idade = datetime.date.today() - ano_nascimento
-        if 0 > idade < 18:
+        mes_nascimento = num2.value
+        dia_nascimento = num3.value
+
+        idade_ano = datetime.date.today() - ano_nascimento
+        idade_mes = datetime.date.today() - mes_nascimento
+        idade_dia = datetime.date.today() - dia_nascimento
+
+        # Ano
+        if 0 > idade_ano < 18:
             'Menor de idade.'
-        elif idade >= 18:
+        elif idade_ano >= 18:
             'Maior de idade.'
         else:
             'A idade é inválida.'
-        txt_resultado.value = f'Resultado = {idade}'
+
+        # Mês
+        if idade_mes <= 12:
+            f'{idade_mes}'
+        elif idade_mes >= 12:
+            'Mês inválido.'
+
+        # Dia
+        if idade_dia <= 30:
+            f'{idade_dia}'
+        elif idade_dia >= 30:
+            'Dia Inválido.'
+        txt_resultado.value = f'Resultado = {idade_ano}'
         page.update()
+
+
 
     # Fields
 
     num1 = ft.TextField(label="Digite seu ano de nascimento" )
-    btn_enviar = ft.FilledButton(text="Enviar",
+    num2 = ft.TextField(label="Digite seu mês de nascimento" )
+    num3 = ft.TextField(label="Digite seu dia de nascimento" )
+    btn_enviar = ft.FilledButton(text="Calcular",
                                  width=page.window.width,
                                  on_click=mostrar_resultado,
                                  )
 
     txt_resultado = ft.Text("")
+
+
 
     # Componentes
 
@@ -41,6 +66,8 @@ def main(page: ft.Page):
         ft.Column(
             [
                 num1,
+                num2,
+                num3,
                 btn_enviar,
                 txt_resultado,
             ]
