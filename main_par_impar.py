@@ -12,9 +12,9 @@ def main(page: ft.Page):
     def mostrar_resultado(e):
         par_impar = int(num1.value) % 2
         if par_impar == 0:
-            txt_resultado.value = f'Número par {num1.value}'
+            txt_resultado.value = f'Número Par: {num1.value}'
         else:
-            txt_resultado.value = f'Número impar {num1.value}'
+            txt_resultado.value = f'Número Impar: {num1.value}'
 
         page.update()
 
