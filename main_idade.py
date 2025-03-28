@@ -18,30 +18,33 @@ def main(page: ft.Page):
         mes_nascimento = num2.value
         dia_nascimento = num3.value
 
-        idade_ano = datetime.date.today() - ano_nascimento
-        idade_mes = datetime.date.today() - mes_nascimento
-        idade_dia = datetime.date.today() - dia_nascimento
+        idade_ano = datetime.date.today().year - int(ano_nascimento)
+        idade_mes = datetime.date.today().month - int(mes_nascimento)
+        idade_dia = datetime.date.today().day - int(dia_nascimento)
 
         # Ano
         if 0 > idade_ano < 18:
             'Menor de idade.'
+            txt_resultado.value = f'Resultado = {idade_ano}'
         elif idade_ano >= 18:
             'Maior de idade.'
+            txt_resultado.value = f'Resultado = {idade_ano}'
         else:
             'A idade é inválida.'
 
         # Mês
         if idade_mes <= 12:
-            f'{idade_mes}'
+            txt_resultado.value = f'Resultado = {idade_mes}'
         elif idade_mes >= 12:
             'Mês inválido.'
 
         # Dia
         if idade_dia <= 30:
-            f'{idade_dia}'
+            txt_resultado.value = f'Diferença em dias = {idade_dia}'
         elif idade_dia >= 30:
             'Dia Inválido.'
-        txt_resultado.value = f'Resultado = {idade_ano}'
+
+
         page.update()
 
 
