@@ -24,25 +24,24 @@ def main(page: ft.Page):
 
         # Ano
         if 0 > idade_ano < 18:
-            'Menor de idade.'
             txt_resultado.value = f'Resultado = {idade_ano}'
         elif idade_ano >= 18:
-            'Maior de idade.'
             txt_resultado.value = f'Resultado = {idade_ano}'
         else:
             'A idade é inválida.'
 
         # Mês
-        if idade_mes <= 12:
-            txt_resultado.value = f'Resultado = {idade_mes}'
-        elif idade_mes >= 12:
+        if 0 > idade_mes or idade_mes <= 12:
+            txt_resultado.value = f'Diferença em meses = {idade_mes}'
+        elif 0 <= idade_mes or idade_mes > 12:
             'Mês inválido.'
 
         # Dia
-        if idade_dia <= 30:
+        if 0 > idade_dia or idade_dia <= 31:
             txt_resultado.value = f'Diferença em dias = {idade_dia}'
-        elif idade_dia >= 30:
+        elif 0 <= idade_dia or idade_dia > 31:
             'Dia Inválido.'
+
 
 
         page.update()
