@@ -10,7 +10,6 @@ def main(page: ft.Page):
 
 
     def mostrar_resultado(e):
-
         par_impar = int(num1.value) % 2
         if par_impar == 0:
             txt_resultado.value = f'Número par {num1.value}'
