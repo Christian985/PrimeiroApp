@@ -14,9 +14,8 @@ def main(page: ft.Page):
     # Funções
 
     def mostrar_resultado(e):
-        ano_nascimento = (num1.value)
-        data_atual = datetime.date.today()
-        idade = data_atual - ano_nascimento
+        ano_nascimento = num1.value
+        idade = datetime.date.today() - ano_nascimento
         if 0 > idade < 18:
             'Menor de idade.'
         elif idade >= 18:
