@@ -66,7 +66,7 @@ def main(page: ft.Page):
                         Text(value=f'Tempo de contribuição: {tempo_contribuicao.value}'),
                         Text(value=f'Média salárial: {media_salarial.value}'),
                         Text(value=f'Tipo de aposentadoria: {tipo_aposentadoria.value}'),
-                        Text(value=f'resultado : {tipo_aposentadoria.value}'),
+                        Text(value=f'resultado : {resultado_idade.value}'),
 
                     ],
                 )
@@ -82,14 +82,15 @@ def main(page: ft.Page):
                         Text(value=f'Tempo de contribuição: {tempo_contribuicao.value}'),
                         Text(value=f'Média salárial: {media_salarial.value}'),
                         Text(value=f'Tipo de aposentadoria: {tipo_aposentadoria.value}'),
-                        Text(value=f'resultado: {tipo_aposentadoria.value}'),
+                        Text(value=f'resultadogggggggggggggg: {resultado_contribuicao.value}'),
 
                     ],
                 )
             )
         page.update()
 
-
+    def calcu_idade(e):
+        resultado_idade = int(input_idade.value)
 
     # Função que configura o botão 'voltar'
     def voltar(e):
@@ -110,12 +111,6 @@ def main(page: ft.Page):
         fill_color=Colors.RED,
         options=[Option(key='Idade', text='Idade'), Option(key='cont', text='Tempo de contribuição')],
     )
-
-    def calcular(e):
-        if menu.value == 'Masc':
-            print('Masculino')
-    # Primeira Página - Início
-
 
     # Segunda Página - Simulador de aposentadoria
     input_idade = ft.TextField(label='Idade', hint_text='Digite sua idade')
