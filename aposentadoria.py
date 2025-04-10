@@ -56,7 +56,7 @@ def main(page: ft.Page):
                 View(
                     '/sim_resultados',
                     [
-                        AppBar(title=Text('Resultados de Aposentadoria'), bgcolor=Colors.SECONDARY_CONTAINER),
+                        AppBar(title=Text('Resultados da Aposentadoria'), bgcolor=Colors.SECONDARY_CONTAINER),
                         regras
                     ],
                 )
