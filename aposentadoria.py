@@ -37,6 +37,7 @@ def main(page: ft.Page):
                     '/sim_aposentar',
                     [
                         AppBar(title=Text('Simular Aposentadoria'), bgcolor=Colors.SECONDARY_CONTAINER),
+                        ElevatedButton(text='Mostrar resultados', on_click=lambda _: page.go('/resultados')),
                     ],
                 )
             )
@@ -46,6 +47,16 @@ def main(page: ft.Page):
                     '/regras',
                     [
                         AppBar(title=Text('Regras da Aposentadoria'), bgcolor=Colors.SECONDARY_CONTAINER),
+                        regras
+                    ],
+                )
+            )
+        elif page.route == '/sim_resultados':
+            page.views.append(
+                View(
+                    '/sim_resultados',
+                    [
+                        AppBar(title=Text('Resultados da Aposentadoria'), bgcolor=Colors.SECONDARY_CONTAINER),
                         regras
                     ],
                 )
@@ -82,6 +93,7 @@ def main(page: ft.Page):
                                'mínimo de contribuição.')
 
     # Quarta Página - Resultados
+
     # Evento para chamar a função
     page.on_view_pop = voltar
 
