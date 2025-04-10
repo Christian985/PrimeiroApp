@@ -40,7 +40,8 @@ def main(page: ft.Page):
                         tempo_contribuicao,
                         media_salarial,
                         tipo_aposentadoria,
-                        ElevatedButton(text='Mostrar resultados', on_click=lambda _: page.go('/sim_resultados')),
+                        ElevatedButton(text='Idade', on_click=lambda _: page.go('/sim_resultados_idade')),
+                        ElevatedButton(text='Contribuição', on_click=lambda _: page.go('/sim_resultados_contribuicao')),
                     ],
                 )
             )
@@ -54,18 +55,34 @@ def main(page: ft.Page):
                     ],
                 )
             )
-        elif page.route == '/sim_resultados':
+        elif page.route == '/sim_resultados_idade':
             page.views.append(
                 View(
-                    '/sim_resultados',
+                    '/sim_resultados_idade',
                     [
-                        AppBar(title=Text('Resultados da Aposentadoria'), bgcolor=Colors.SECONDARY_CONTAINER),
+                        AppBar(title=Text('Aposentadoria por Idade'), bgcolor=Colors.SECONDARY_CONTAINER),
                         Text(value=f'Idade:  {input_idade.value}'),
                         Text(value=f'Gênero: {menu.value}'),
                         Text(value=f'Tempo de contribuição: {tempo_contribuicao.value}'),
                         Text(value=f'Média salárial: {media_salarial.value}'),
                         Text(value=f'Tipo de aposentadoria: {tipo_aposentadoria.value}'),
                         Text(value=f'resultado : {tipo_aposentadoria.value}'),
+
+                    ],
+                )
+            )
+        elif page.route == '/sim_resultados_contribuicao':
+            page.views.append(
+                View(
+                    '/sim_resultados_contribuicao',
+                    [
+                        AppBar(title=Text('Aposentadoria por Contribuição'), bgcolor=Colors.SECONDARY_CONTAINER),
+                        Text(value=f'Idade:  {input_idade.value}'),
+                        Text(value=f'Gênero: {menu.value}'),
+                        Text(value=f'Tempo de contribuição: {tempo_contribuicao.value}'),
+                        Text(value=f'Média salárial: {media_salarial.value}'),
+                        Text(value=f'Tipo de aposentadoria: {tipo_aposentadoria.value}'),
+                        Text(value=f'resultado: {tipo_aposentadoria.value}'),
 
                     ],
                 )
