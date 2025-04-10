@@ -14,6 +14,8 @@ def main(page: ft.Page):
     page.window.width = 375
     page.window.height = 667
 
+
+
     # Função para gerenciar as telas.
     def gerencia_rotas(e):
         page.views.clear()
@@ -64,6 +66,8 @@ def main(page: ft.Page):
             )
         page.update()
 
+
+
     # Função que configura o botão 'voltar'
     def voltar(e):
         page.views.pop()
@@ -98,10 +102,11 @@ def main(page: ft.Page):
                                'Mulheres: 62 anos de idade e pelo menos 15 anos de contribuição.\n\nAposentadoria por Tempo '
                                'de Contribuição:\n\nHomens: 35 anos de contribuição.\n\nMulheres: 30 anos de contribuição.\n\n'
                                'Valor Estimado do Benefício:\nO valor da aposentadoria será uma média de 60% da média '
-                               'salarial informada, acrescido de 2% por ano que exceder o tempo'
+                               'salarial informada, acrescido de 2% por ano que exceder o tempo '
                                'mínimo de contribuição.')
 
     # Quarta Página - Resultados
+
 
     # Evento para chamar a função
     page.on_view_pop = voltar
