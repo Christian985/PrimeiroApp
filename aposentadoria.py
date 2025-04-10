@@ -60,6 +60,12 @@ def main(page: ft.Page):
                     '/sim_resultados',
                     [
                         AppBar(title=Text('Resultados da Aposentadoria'), bgcolor=Colors.SECONDARY_CONTAINER),
+                        Text(value=f'Idade:  {input_idade.value}'),
+                        Text(value=f'Gênero: {menu.value}'),
+                        Text(value=f'Tempo de contribuição: {tempo_contribuicao.value}'),
+                        Text(value=f'Média salárial: {media_salarial.value}'),
+                        Text(value=f'Tipo de aposentadoria: {tipo_aposentadoria.value}'),
+                        Text(value=f'resultado : {tipo_aposentadoria.value}'),
 
                     ],
                 )
@@ -73,7 +79,7 @@ def main(page: ft.Page):
         page.views.pop()
         top_view = page.views[-1]
         page.go(top_view.route)
-    # Configuração de alternativa
+    # Configurações de alternativa
 
     menu = ft.Dropdown(
         label="Gênero",
@@ -88,7 +94,9 @@ def main(page: ft.Page):
         options=[Option(key='Idade', text='Idade'), Option(key='cont', text='Tempo de contribuição')],
     )
 
-
+    def calcular(e):
+        if menu.value == 'Masc':
+            print('Masculino')
     # Primeira Página - Início
 
 
