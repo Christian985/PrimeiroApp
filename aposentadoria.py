@@ -70,7 +70,6 @@ def main(page: ft.Page):
         page.views.pop()
         top_view = page.views[-1]
         page.go(top_view.route)
-
     # Configuração de alternativa
     menu = ft.Dropdown(
         label="Gênero",
