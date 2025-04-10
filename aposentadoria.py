@@ -23,7 +23,7 @@ def main(page: ft.Page):
             View(
                 "/",
                 [
-                    AppBar(title=Text('Home'), bgcolor=Colors.PRIMARY_CONTAINER),
+                    AppBar(title=Text('Aposentadoria'), bgcolor=Colors.PRIMARY_CONTAINER),
                     ElevatedButton(text='Simular aposentadoria', on_click=lambda _: page.go('/sim_aposentar')),
                     ElevatedButton(text='Regras aposentadoria', on_click=lambda _: page.go('/regras')),
                 ],
