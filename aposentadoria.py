@@ -70,6 +70,7 @@ def main(page: ft.Page):
         top_view = page.views[-1]
         page.go(top_view.route)
     # Configuração de alternativa
+
     menu = ft.Dropdown(
         label="Gênero",
         width=page.window.width,
@@ -93,10 +94,10 @@ def main(page: ft.Page):
     media_salarial = ft.TextField(label='Média Salarial', hint_text='Digite sua média salarial de pelo menos 5 anos')
 
     # Terceira Página - Regras de Aposentadoria
-    regras = ft.Text('Aposentadoria por Idade:\n\nHomens: 65 anos de idade e pelo menos 15 anos de contribuição.\n'
-                               'Mulheres: 62 anos de idade e pelo menos 15 anos de contribuição.\nAposentadoria por Tempo '
-                               'de Contribuição: Homens: 35 anos de contribuição.\nMulheres: 30 anos de contribuição.\n\n'
-                               'Valor Estimado do Benefício:\n\nO valor da aposentadoria será uma média de 60% da média'
+    regras = ft.Text('Aposentadoria por Idade:\n\nHomens: 65 anos de idade e pelo menos 15 anos de contribuição.\n\n'
+                               'Mulheres: 62 anos de idade e pelo menos 15 anos de contribuição.\n\nAposentadoria por Tempo '
+                               'de Contribuição:\n\nHomens: 35 anos de contribuição.\n\nMulheres: 30 anos de contribuição.\n\n'
+                               'Valor Estimado do Benefício:\nO valor da aposentadoria será uma média de 60% da média '
                                'salarial informada, acrescido de 2% por ano que exceder o tempo'
                                'mínimo de contribuição.')
 
