@@ -22,10 +22,7 @@ def main(page: ft.Page):
                 "/",
                 [
                     AppBar(title=Text('Home'), bgcolor=Colors.PRIMARY_CONTAINER),
-                    input_idade,
-                    menu,
-                    tempo_contribuicao,
-                    media_salarial,
+
                     ElevatedButton(text='Simular aposentadoria', on_click=lambda _: page.go('/sim_aposentar')),
                     ElevatedButton(text='Regras aposentadoria', on_click=lambda _: page.go('/regras')),
                 ],
@@ -37,7 +34,12 @@ def main(page: ft.Page):
                     '/sim_aposentar',
                     [
                         AppBar(title=Text('Simular Aposentadoria'), bgcolor=Colors.SECONDARY_CONTAINER),
-                        ElevatedButton(text='Mostrar resultados', on_click=lambda _: page.go('/resultados')),
+                        input_idade,
+                        menu,
+                        tempo_contribuicao,
+                        media_salarial,
+                        tipo_aposentadoria,
+                        ElevatedButton(text='Mostrar resultados', on_click=lambda _: page.go('/sim_resultados')),
                     ],
                 )
             )
@@ -56,8 +58,8 @@ def main(page: ft.Page):
                 View(
                     '/sim_resultados',
                     [
-                        AppBar(title=Text('Resultados de Aposentadoria'), bgcolor=Colors.SECONDARY_CONTAINER),
-                        regras
+                        AppBar(title=Text('Resultados da Aposentadoria'), bgcolor=Colors.SECONDARY_CONTAINER),
+
                     ],
                 )
             )
@@ -69,20 +71,28 @@ def main(page: ft.Page):
         top_view = page.views[-1]
         page.go(top_view.route)
 
+    # Configuração de alternativa
     menu = ft.Dropdown(
         label="Gênero",
         width=page.window.width,
         fill_color=Colors.RED,
-        options=[Option(key='Masc', text='Masculino'), Option(key='Fe', text='Feminino'), Option(key='Av', text='Avião')],
+        options=[Option(key='Masc', text='Masculino'), Option(key='Fe', text='Feminino')],
+    )
+    tipo_aposentadoria = ft.Dropdown(
+        label="Tipo de Aposentadoria",
+        width=page.window.width,
+        fill_color=Colors.RED,
+        options=[Option(key='Idade', text='Idade'), Option(key='cont', text='Tempo de contribuição')],
     )
 
+
     # Primeira Página - Início
-    input_idade = ft.TextField(label='Idade', hint_text='Digite sua idade')
-    tempo_contribuicao = ft.TextField(label='Tempo de Contribuição', hint_text='Digite seus anos de contribuição')
-    media_salarial = ft.TextField(label='Média Salarial', hint_text='Digite sua média salarial')
+
 
     # Segunda Página - Simulador de aposentadoria
-
+    input_idade = ft.TextField(label='Idade', hint_text='Digite sua idade')
+    tempo_contribuicao = ft.TextField(label='Tempo de Contribuição', hint_text='Digite seus anos de contribuição')
+    media_salarial = ft.TextField(label='Média Salarial', hint_text='Digite sua média salarial de pelo menos 5 anos')
 
     # Terceira Página - Regras de Aposentadoria
     regras = ft.Text('Aposentadoria por Idade:\n\nHomens: 65 anos de idade e pelo menos 15 anos de contribuição.\n'
