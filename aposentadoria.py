@@ -85,7 +85,7 @@ def main(page: ft.Page):
         label="Gênero",
         width=page.window.width,
         fill_color=Colors.RED,
-        options=[Option(key='Masc', text='Masculino'), Option(key='Fe', text='Feminino')],
+        options=[Option(key='Masculino', text='Masculino'), Option(key='Feminino', text='Feminino')],
     )
     tipo_aposentadoria = ft.Dropdown(
         label="Tipo de Aposentadoria",
