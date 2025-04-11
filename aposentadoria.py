@@ -67,7 +67,8 @@ def main(page: ft.Page):
                         Text(value=f'Tempo de contribuição: {tempo_contribuicao.value}'),
                         Text(value=f'Média salárial: {media_salarial.value}'),
                         Text(value=f'Tipo de aposentadoria: {tipo_aposentadoria.value}'),
-                        Text(value=f'resultado : {calcu_idade}'),
+                        Text(value=f'resultado : {calcu}'),
+                        Text(value=txt_resultado),
 
                     ],
                 )
@@ -83,24 +84,29 @@ def main(page: ft.Page):
                         Text(value=f'Tempo de contribuição: {tempo_contribuicao.value}'),
                         Text(value=f'Média salárial: {media_salarial.value}'),
                         Text(value=f'Tipo de aposentadoria: {tipo_aposentadoria.value}'),
-                        Text(value=f'resultadogggggggggggggg: {calcu_idade}'),
+                        Text(value=f'resultado gggggggggggg: {calcu}'),
 
                     ],
                 )
             )
         page.update()
 
-    def calcu_idade(e):
+
+    def calcu(e):
         sua_idade = int(input_idade.value)
-        menu = menu.value
-        tempo_contribuicao = int(tempo_contribuicao.value)
-        media_salarial = float(media_salarial.value)
-        tipo_aposentadoria = tipo_aposentadoria.value
+        genero = menu.value
+        contribuicao = int(tempo_contribuicao.value)
 
-        resultado = ""
-        if menu == 'Masculino':
-            sua_idade2 = sua_idade + 2
 
+        if sua_idade == 65 and contribuicao == 15 and genero == 'Masculino':
+            txt_resultado = 5
+            page.update()
+
+        elif sua_idade == 62 and contribuicao == 15 and genero == 'Feminino':
+            txt_resultado = 9
+            page.update()
+
+    txt_resultado = ""
 
 
     # Função que configura o botão 'voltar'
@@ -137,6 +143,7 @@ def main(page: ft.Page):
                                'mínimo de contribuição.')
 
     # Quarta Página - Resultados
+    txt_resultado = ft.Text("")
 
 
     # Evento para chamar a função
