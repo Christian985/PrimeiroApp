@@ -1,7 +1,7 @@
 import flet as ft
 from flet.core.app_bar import AppBar
 from flet.core.colors import Colors
-from flet.core.dropdown import Option
+from flet.core.dropdown import Option, Dropdown
 from flet.core.elevated_button import ElevatedButton
 from flet.core.text import Text
 from flet.core.view import View
@@ -13,6 +13,7 @@ def main(page: ft.Page):
     page.theme_mode = ft.ThemeMode.DARK  # ou ft.ThemeMode.WHITE
     page.window.width = 375
     page.window.height = 667
+
 
 
 
@@ -66,7 +67,7 @@ def main(page: ft.Page):
                         Text(value=f'Tempo de contribuição: {tempo_contribuicao.value}'),
                         Text(value=f'Média salárial: {media_salarial.value}'),
                         Text(value=f'Tipo de aposentadoria: {tipo_aposentadoria.value}'),
-                        Text(value=f'resultado : {resultado_idade.value}'),
+                        Text(value=f'resultado : {calcu_idade}'),
 
                     ],
                 )
@@ -82,7 +83,7 @@ def main(page: ft.Page):
                         Text(value=f'Tempo de contribuição: {tempo_contribuicao.value}'),
                         Text(value=f'Média salárial: {media_salarial.value}'),
                         Text(value=f'Tipo de aposentadoria: {tipo_aposentadoria.value}'),
-                        Text(value=f'resultadogggggggggggggg: {resultado_contribuicao.value}'),
+                        Text(value=f'resultadogggggggggggggg: {calcu_idade}'),
 
                     ],
                 )
@@ -90,7 +91,17 @@ def main(page: ft.Page):
         page.update()
 
     def calcu_idade(e):
-        resultado_idade = int(input_idade.value)
+        sua_idade = int(input_idade.value)
+        menu = menu.value
+        tempo_contribuicao = int(tempo_contribuicao.value)
+        media_salarial = float(media_salarial.value)
+        tipo_aposentadoria = tipo_aposentadoria.value
+
+        resultado = ""
+        if menu == 'Masculino':
+            sua_idade2 = sua_idade + 2
+
+
 
     # Função que configura o botão 'voltar'
     def voltar(e):
