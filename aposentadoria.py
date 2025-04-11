@@ -41,7 +41,7 @@ def main(page: ft.Page):
                         tempo_contribuicao,
                         media_salarial,
                         tipo_aposentadoria,
-                        ElevatedButton(text='Idade', on_click=lambda _: page.go('/sim_resultados_idade')),
+                        ElevatedButton(text='Idade', on_click= lambda _:calcu(e)),
                         ElevatedButton(text='Contribuição', on_click=lambda _: page.go('/sim_resultados_contribuicao')),
                     ],
                 )
@@ -65,10 +65,9 @@ def main(page: ft.Page):
                         Text(value=f'Idade:  {input_idade.value}'),
                         Text(value=f'Gênero: {menu.value}'),
                         Text(value=f'Tempo de Contribuição: {tempo_contribuicao.value}'),
-                        Text(value=f'Média Salárial: {media_salarial.value}'),
+                        Text(value=f'Média Salarial: {media_salarial.value}'),
                         Text(value=f'Tipo de Aposentadoria: {tipo_aposentadoria.value}'),
-                        Text(value=f'Resultado : {calcu}'),
-                        Text(value=txt_resultado),
+                        Text(value=f'Resultado: {txt_resultado.value}'),
 
                     ],
                 )
@@ -84,8 +83,7 @@ def main(page: ft.Page):
                         Text(value=f'Tempo de Contribuição: {tempo_contribuicao.value}'),
                         Text(value=f'Média Salárial: {media_salarial.value}'),
                         Text(value=f'Tipo de Aposentadoria: {tipo_aposentadoria.value}'),
-                        Text(value=f'Resultado gggggggggggg: {calcu}'),
-
+                        txt_resultado
                     ],
                 )
             )
@@ -93,20 +91,10 @@ def main(page: ft.Page):
 
 
     def calcu(e):
-        sua_idade = int(input_idade.value)
-        genero = menu.value
-        contribuicao = int(tempo_contribuicao.value)
-
-
-        if sua_idade == 65 and contribuicao == 15:
-            txt_resultado.value = 5
-            page.update()
-
-        elif sua_idade == 62 and contribuicao == 15:
-            txt_resultado = 9
-            page.update()
-
-    txt_resultado = ""
+        valor_aposentadoria = int(input_idade.value) + int(tempo_contribuicao.value)
+        txt_resultado.value = valor_aposentadoria
+        page.update()
+        page.go('/sim_resultados_idade')
 
 
     # Função que configura o botão 'voltar'
