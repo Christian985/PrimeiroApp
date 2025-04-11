@@ -64,10 +64,10 @@ def main(page: ft.Page):
                         AppBar(title=Text('Aposentadoria por Idade'), bgcolor=Colors.SECONDARY_CONTAINER),
                         Text(value=f'Idade:  {input_idade.value}'),
                         Text(value=f'Gênero: {menu.value}'),
-                        Text(value=f'Tempo de contribuição: {tempo_contribuicao.value}'),
-                        Text(value=f'Média salárial: {media_salarial.value}'),
-                        Text(value=f'Tipo de aposentadoria: {tipo_aposentadoria.value}'),
-                        Text(value=f'resultado : {calcu}'),
+                        Text(value=f'Tempo de Contribuição: {tempo_contribuicao.value}'),
+                        Text(value=f'Média Salárial: {media_salarial.value}'),
+                        Text(value=f'Tipo de Aposentadoria: {tipo_aposentadoria.value}'),
+                        Text(value=f'Resultado : {calcu}'),
                         Text(value=txt_resultado),
 
                     ],
@@ -81,10 +81,10 @@ def main(page: ft.Page):
                         AppBar(title=Text('Aposentadoria por Contribuição'), bgcolor=Colors.SECONDARY_CONTAINER),
                         Text(value=f'Idade:  {input_idade.value}'),
                         Text(value=f'Gênero: {menu.value}'),
-                        Text(value=f'Tempo de contribuição: {tempo_contribuicao.value}'),
-                        Text(value=f'Média salárial: {media_salarial.value}'),
-                        Text(value=f'Tipo de aposentadoria: {tipo_aposentadoria.value}'),
-                        Text(value=f'resultado gggggggggggg: {calcu}'),
+                        Text(value=f'Tempo de Contribuição: {tempo_contribuicao.value}'),
+                        Text(value=f'Média Salárial: {media_salarial.value}'),
+                        Text(value=f'Tipo de Aposentadoria: {tipo_aposentadoria.value}'),
+                        Text(value=f'Resultado gggggggggggg: {calcu}'),
 
                     ],
                 )
@@ -98,11 +98,11 @@ def main(page: ft.Page):
         contribuicao = int(tempo_contribuicao.value)
 
 
-        if sua_idade == 65 and contribuicao == 15 and genero == 'Masculino':
-            txt_resultado = 5
+        if sua_idade == 65 and contribuicao == 15:
+            txt_resultado.value = 5
             page.update()
 
-        elif sua_idade == 62 and contribuicao == 15 and genero == 'Feminino':
+        elif sua_idade == 62 and contribuicao == 15:
             txt_resultado = 9
             page.update()
 
