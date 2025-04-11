@@ -65,7 +65,6 @@ def main(page: ft.Page):
                         Text(value=f'Gênero: {menu.value}'),
                         Text(value=f'Tempo de Contribuição: {tempo_contribuicao.value}'),
                         Text(value=f'Média Salarial: {media_salarial.value}'),
-                        Text(value=f'Tipo de Aposentadoria: {tipo_aposentadoria.value}'),
                         Text(value=f'Resultado: {txt_resultado.value}'),
                         txt_resultado
 
@@ -82,7 +81,6 @@ def main(page: ft.Page):
                         Text(value=f'Gênero: {menu.value}'),
                         Text(value=f'Tempo de Contribuição: {tempo_contribuicao.value}'),
                         Text(value=f'Média Salárial: {media_salarial.value}'),
-                        Text(value=f'Tipo de Aposentadoria: {tipo_aposentadoria.value}'),
                         txt_resultado
                     ],
                 )
@@ -91,8 +89,11 @@ def main(page: ft.Page):
 
 
     def calcu(e):
-        valor_idade = int(input_idade.value) + int(tempo_contribuicao.value)
-        txt_resultado.value = valor_idade
+        valor_total = int(input_idade.value)
+        percentual = int(tempo_contribuicao.value)
+        resultado = (percentual / 100) * valor_total
+        print(f"{percentual}% de {valor_total} é {resultado}")
+        txt_resultado.value = resultado
         page.update()
         page.go('/sim_resultados_idade')
 
