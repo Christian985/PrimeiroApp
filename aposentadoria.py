@@ -40,9 +40,8 @@ def main(page: ft.Page):
                         menu,
                         tempo_contribuicao,
                         media_salarial,
-                        tipo_aposentadoria,
                         ElevatedButton(text='Idade', on_click= lambda _:calcu(e)),
-                        ElevatedButton(text='Contribuição', on_click=lambda _: page.go('/sim_resultados_contribuicao')),
+                        ElevatedButton(text='Contribuição', on_click=lambda _: calcu_tempo_contribuicao(e)),
                     ],
                 )
             )
@@ -68,6 +67,7 @@ def main(page: ft.Page):
                         Text(value=f'Média Salarial: {media_salarial.value}'),
                         Text(value=f'Tipo de Aposentadoria: {tipo_aposentadoria.value}'),
                         Text(value=f'Resultado: {txt_resultado.value}'),
+                        txt_resultado
 
                     ],
                 )
@@ -91,10 +91,17 @@ def main(page: ft.Page):
 
 
     def calcu(e):
-        valor_aposentadoria = int(input_idade.value) + int(tempo_contribuicao.value)
-        txt_resultado.value = valor_aposentadoria
+        valor_idade = int(input_idade.value) + int(tempo_contribuicao.value)
+        txt_resultado.value = valor_idade
         page.update()
         page.go('/sim_resultados_idade')
+
+
+    def calcu_tempo_contribuicao(e):
+        valor_contribuicao = int(tempo_contribuicao.value) + int(media_salarial.value)
+        txt_resultado.value = valor_contribuicao
+        page.update()
+        page.go('/sim_resultados_contribuicao')
 
 
     # Função que configura o botão 'voltar'
@@ -110,12 +117,7 @@ def main(page: ft.Page):
         fill_color=Colors.RED,
         options=[Option(key='Masculino', text='Masculino'), Option(key='Feminino', text='Feminino')],
     )
-    tipo_aposentadoria = ft.Dropdown(
-        label="Tipo de Aposentadoria",
-        width=page.window.width,
-        fill_color=Colors.RED,
-        options=[Option(key='Idade', text='Idade'), Option(key='cont', text='Tempo de contribuição')],
-    )
+
 
     # Segunda Página - Simulador de aposentadoria
     input_idade = ft.TextField(label='Idade', hint_text='Digite sua idade')
