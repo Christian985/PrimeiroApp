@@ -120,7 +120,7 @@ def main(page: ft.Page):
                 txt_data_aposentadoria.value = f'Você poderá se aposentar em: {data_aposentadoria}'
 
         else:
-            # Caso seja feminino
+            # Caso seja feminino e possa aposentar
             if valor_idade > 62:
                 percentual = 60 + (valor_idade - 15) * 2
                 resultado = valor_salario * (percentual / 100)
