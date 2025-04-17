@@ -123,7 +123,6 @@ def main(page: ft.Page):
             txt_resultado.value = resultado
         page.update()
         page.go('/sim_resultados_idade')
-
     # Calculo do tempo de contribuição
     def calcu_tempo_contribuicao(e):
         valor_genero = menu.value
