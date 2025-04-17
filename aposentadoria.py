@@ -69,6 +69,7 @@ def main(page: ft.Page):
                         Text(value=f'Média Salarial: {media_salarial.value}'),
                         Text(value=f'Resultado: {txt_resultado.value}'),
                         txt_data_aposentadoria,
+                        txt_aposentar
 
                     ],
                 )
@@ -98,9 +99,9 @@ def main(page: ft.Page):
         valor_genero = menu.value
         valor_idade = int(input_idade.value)
         valor_salario = int(media_salarial.value)
-        aposentar = "Você já pode se aposentar!"
         # Caso seja masculino e possa aposentar
         if valor_idade > 65 and valor_genero == 'Masculino':
+            aposentar = "Você já pode se aposentar!"
             percentual = 60 + (valor_idade - 15) * 2
             resultado = valor_salario * (percentual / 100)
             print(f"{valor_idade}% de {valor_salario} é {resultado}")
@@ -112,7 +113,6 @@ def main(page: ft.Page):
             percentual = 60 + (valor_idade - 15) * 2
             resultado = valor_salario * (percentual / 100)
             print(f"{valor_idade}% de {valor_salario} é {resultado}")
-            txt_resultado.value = resultado
             txt_data_aposentadoria.value = f'Você poderá se aposentar em: {data_aposentadoria}'
 
         # Caso seja feminino
@@ -176,7 +176,7 @@ def main(page: ft.Page):
     # Quarta Página - Resultados
     txt_resultado = ft.Text("")
     txt_data_aposentadoria = ft.Text("")
-    txt_aposentar = ft.Text("")
+    txt_aposentar = ft.Text("Você já pode aposentar!")
 
 
     # Evento para chamar a função
