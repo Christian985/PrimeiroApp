@@ -69,7 +69,6 @@ def main(page: ft.Page):
                         Text(value=f'Média Salarial: {media_salarial.value}'),
                         Text(value=f'Resultado: {txt_resultado.value}'),
                         txt_data_aposentadoria,
-                        txt_aposentar
 
                     ],
                 )
