@@ -99,30 +99,36 @@ def main(page: ft.Page):
         valor_genero = menu.value
         valor_idade = int(input_idade.value)
         valor_salario = int(media_salarial.value)
-        # Caso seja masculino e possa aposentar
-        if valor_idade > 65 and valor_genero == 'Masculino':
-            aposentar = "Você já pode se aposentar!"
-            percentual = 60 + (valor_idade - 15) * 2
-            resultado = valor_salario * (percentual / 100)
-            print(f"{valor_idade}% de {valor_salario} é {resultado}")
-            txt_resultado.value = resultado
-            txt_aposentar.value = aposentar
 
-        # Caso seja masculino e não possa aposentar
-        elif valor_idade < 65 and valor_genero == 'Masculino':
-            percentual = 60 + (valor_idade - 15) * 2
-            resultado = valor_salario * (percentual / 100)
-            print(f"{valor_idade}% de {valor_salario} é {resultado}")
-            txt_data_aposentadoria.value = f'Você poderá se aposentar em: {data_aposentadoria}'
+        if valor_genero == 'Masculino':
 
-        # Caso seja feminino
-        elif valor_idade > 62 and valor_genero == 'Feminino':
-            percentual = 60 + (valor_idade - 15) * 2
-            resultado = valor_salario * (percentual / 100)
-            print(f"{valor_idade}% de {valor_salario} é {resultado}")
-            txt_resultado.value = resultado
+            # Caso seja masculino e possa aposentar
+            if valor_idade > 65:
+                aposentar = "Você já pode se aposentar!"
+                percentual = 60 + (valor_idade - 15) * 2
+                resultado = valor_salario * (percentual / 100)
+                print(f"{valor_idade}% de {valor_salario} é {resultado}")
+                txt_resultado.value = resultado
+                txt_aposentar.value = aposentar
+
+            # Caso seja masculino e não possa aposentar
+            elif valor_idade < 65:
+                percentual = 60 + (valor_idade - 15) * 2
+                resultado = valor_salario * (percentual / 100)
+                print(f"{valor_idade}% de {valor_salario} é {resultado}")
+                txt_resultado.value = resultado
+                txt_data_aposentadoria.value = f'Você poderá se aposentar em: {data_aposentadoria}'
+        else:
+            # Caso seja feminino
+            if valor_idade > 62 and valor_genero == 'Feminino':
+                percentual = 60 + (valor_idade - 15) * 2
+                resultado = valor_salario * (percentual / 100)
+                print(f"{valor_idade}% de {valor_salario} é {resultado}")
+                txt_resultado.value = resultado
+
         page.update()
         page.go('/sim_resultados_idade')
+
     # Calculo do tempo de contribuição
     def calcu_tempo_contribuicao(e):
         valor_genero = menu.value
@@ -175,7 +181,7 @@ def main(page: ft.Page):
     # Quarta Página - Resultados
     txt_resultado = ft.Text("")
     txt_data_aposentadoria = ft.Text("")
-    txt_aposentar = ft.Text("Você já pode aposentar!")
+    txt_aposentar = ft.Text("")
 
 
     # Evento para chamar a função
