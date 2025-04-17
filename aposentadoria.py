@@ -104,7 +104,7 @@ def main(page: ft.Page):
             print(f"{valor_idade}% de {valor_salario} é {resultado}")
             print(data_aposentadoria)
             txt_resultado.value = resultado
-            txt_data_aposentadoria.value = f'Você poderá se aposentar em {data_aposentadoria}'
+            txt_data_aposentadoria.value = f'Você poderá se aposentar em: {data_aposentadoria}'
 
         # Caso seja feminino
         elif valor_idade > 62 and valor_genero == 'Feminino':
