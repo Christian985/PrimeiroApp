@@ -3,6 +3,7 @@ from flet.core.app_bar import AppBar
 from flet.core.colors import Colors
 from flet.core.dropdown import Option, Dropdown
 from flet.core.elevated_button import ElevatedButton
+from flet.core.image import Image
 from flet.core.text import Text
 from flet.core.view import View
 import datetime
@@ -25,6 +26,7 @@ def main(page: ft.Page):
                 "/",
                 [
                     AppBar(title=Text('Aposentadoria'), bgcolor=Colors.PRIMARY_CONTAINER),
+
                     ElevatedButton(text='Simular aposentadoria', on_click=lambda _: page.go('/sim_aposentar')),
                     ElevatedButton(text='Regras aposentadoria', on_click=lambda _: page.go('/regras')),
                 ],
@@ -66,8 +68,8 @@ def main(page: ft.Page):
                         Text(value=f'Tempo de Contribuição: {tempo_contribuicao.value}'),
                         Text(value=f'Média Salarial: {media_salarial.value}'),
                         Text(value=f'Resultado: {txt_resultado.value}'),
-                        txt_resultado,
-                        txt_data_aposentadoria
+                        txt_data_aposentadoria,
+                        txt_aposentar
 
                     ],
                 )
@@ -82,8 +84,8 @@ def main(page: ft.Page):
                         Text(value=f'Gênero: {menu.value}'),
                         Text(value=f'Tempo de Contribuição: {tempo_contribuicao.value}'),
                         Text(value=f'Média Salárial: {media_salarial.value}'),
-                        txt_resultado,
-                        txt_data_aposentadoria
+                        txt_data_aposentadoria,
+                        txt_aposentar
                     ],
                 )
             )
@@ -97,8 +99,17 @@ def main(page: ft.Page):
         valor_genero = menu.value
         valor_idade = int(input_idade.value)
         valor_salario = int(media_salarial.value)
-        # Caso seja masculino
+        aposentar = "Você já pode se aposentar!"
+        # Caso seja masculino e possa aposentar
         if valor_idade > 65 and valor_genero == 'Masculino':
+            percentual = 60 + (valor_idade - 15) * 2
+            resultado = valor_salario * (percentual / 100)
+            print(f"{valor_idade}% de {valor_salario} é {resultado}")
+            txt_resultado.value = resultado
+            txt_aposentar.value = aposentar
+
+
+        elif valor_idade < 65 and valor_genero == 'Masculino':
             percentual = 60 + (valor_idade - 15) * 2
             resultado = valor_salario * (percentual / 100)
             print(f"{valor_idade}% de {valor_salario} é {resultado}")
@@ -167,6 +178,7 @@ def main(page: ft.Page):
     # Quarta Página - Resultados
     txt_resultado = ft.Text("")
     txt_data_aposentadoria = ft.Text("")
+    txt_aposentar = ft.Text("")
 
 
     # Evento para chamar a função
