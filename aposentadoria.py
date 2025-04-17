@@ -89,10 +89,12 @@ def main(page: ft.Page):
 
 
     def calcu(e):
-        valor_total = int(input_idade.value)
-        percentual = int(tempo_contribuicao.value)
-        resultado = (percentual / 100) * valor_total
-        print(f"{percentual}% de {valor_total} é {resultado}")
+        #valor_idade = int(input_idade.value)
+        #valor_contribuicao = int(tempo_contribuicao.value)
+        valor_salario = int(media_salarial.value)
+        #resultado = (valor_contribuicao / 60) * valor_idade
+        resultado = (valor_salario / 60) * valor_idade
+        print(f"{valor_contribuicao}% de {valor_idade} é {resultado}")
         txt_resultado.value = resultado
         page.update()
         page.go('/sim_resultados_idade')
