@@ -5,6 +5,7 @@ from flet.core.dropdown import Option, Dropdown
 from flet.core.elevated_button import ElevatedButton
 from flet.core.text import Text
 from flet.core.view import View
+import datetime
 
 # Configuração inicial.
 def main(page: ft.Page):
@@ -65,7 +66,8 @@ def main(page: ft.Page):
                         Text(value=f'Tempo de Contribuição: {tempo_contribuicao.value}'),
                         Text(value=f'Média Salarial: {media_salarial.value}'),
                         Text(value=f'Resultado: {txt_resultado.value}'),
-                        txt_resultado
+                        txt_resultado,
+                        txt_data_aposentadoria
 
                     ],
                 )
@@ -80,7 +82,8 @@ def main(page: ft.Page):
                         Text(value=f'Gênero: {menu.value}'),
                         Text(value=f'Tempo de Contribuição: {tempo_contribuicao.value}'),
                         Text(value=f'Média Salárial: {media_salarial.value}'),
-                        txt_resultado
+                        txt_resultado,
+                        txt_data_aposentadoria
                     ],
                 )
             )
@@ -89,6 +92,8 @@ def main(page: ft.Page):
 
     # Calculo da idade
     def calcu(e):
+        data_atual = datetime.datetime.today().year
+        data_aposentadoria = int(input_idade.value) + int(data_atual)
         valor_genero = menu.value
         valor_idade = int(input_idade.value)
         valor_salario = int(media_salarial.value)
@@ -97,7 +102,10 @@ def main(page: ft.Page):
             percentual = 60 + (valor_idade - 15) * 2
             resultado = valor_salario * (percentual / 100)
             print(f"{valor_idade}% de {valor_salario} é {resultado}")
+            print(data_aposentadoria)
             txt_resultado.value = resultado
+            txt_data_aposentadoria.value = f'Você poderá se aposentar em {data_aposentadoria}'
+
         # Caso seja feminino
         elif valor_idade > 62 and valor_genero == 'Feminino':
             percentual = 60 + (valor_idade - 15) * 2
@@ -158,6 +166,7 @@ def main(page: ft.Page):
 
     # Quarta Página - Resultados
     txt_resultado = ft.Text("")
+    txt_data_aposentadoria = ft.Text("")
 
 
     # Evento para chamar a função
