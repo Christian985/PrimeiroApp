@@ -108,12 +108,11 @@ def main(page: ft.Page):
             txt_resultado.value = resultado
             txt_aposentar.value = aposentar
 
-
+        # Caso seja masculino e não possa aposentar
         elif valor_idade < 65 and valor_genero == 'Masculino':
             percentual = 60 + (valor_idade - 15) * 2
             resultado = valor_salario * (percentual / 100)
             print(f"{valor_idade}% de {valor_salario} é {resultado}")
-            print(data_aposentadoria)
             txt_resultado.value = resultado
             txt_data_aposentadoria.value = f'Você poderá se aposentar em: {data_aposentadoria}'
 
