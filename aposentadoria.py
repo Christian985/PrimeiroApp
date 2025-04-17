@@ -134,18 +134,23 @@ def main(page: ft.Page):
         valor_genero = menu.value
         valor_contribuicao = int(tempo_contribuicao.value)
         valor_salario = int(media_salarial.value)
+
         # Caso seja masculino
-        if valor_contribuicao > 35 and valor_genero == 'Masculino':
-            percentual = 60 + (valor_contribuicao - 15) * 2
-            resultado = valor_salario * (percentual / 100)
-            print(f"{valor_contribuicao}% de {valor_salario} é {resultado}")
-            txt_resultado.value = resultado
+        if valor_genero == 'Masculino':
+
+            if valor_contribuicao > 35:
+                percentual = 60 + (valor_contribuicao - 15) * 2
+                resultado = valor_salario * (percentual / 100)
+                print(f"{valor_contribuicao}% de {valor_salario} é {resultado}")
+                txt_resultado.value = resultado
+
         # Caso seja feminino
-        elif valor_contribuicao > 30 and valor_genero == 'Feminino':
-            percentual = 60 + (valor_contribuicao - 15) * 2
-            resultado = valor_salario * (percentual / 100)
-            print(f"{valor_contribuicao}% de {valor_salario} é {resultado}")
-            txt_resultado.value = resultado
+        else:
+            if valor_contribuicao > 30:
+                percentual = 60 + (valor_contribuicao - 15) * 2
+                resultado = valor_salario * (percentual / 100)
+                print(f"{valor_contribuicao}% de {valor_salario} é {resultado}")
+                txt_resultado.value = resultado
         page.update()
         page.go('/sim_resultados_contribuicao')
 
