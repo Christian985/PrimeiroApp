@@ -86,6 +86,7 @@ def main(page: ft.Page):
             )
         page.update()
 
+
     # Calculo da idade
     def calcu(e):
         valor_genero = menu.value
@@ -125,6 +126,7 @@ def main(page: ft.Page):
             txt_resultado.value = resultado
         page.update()
         page.go('/sim_resultados_contribuicao')
+
 
     # Função que configura o botão 'voltar'
     def voltar(e):
