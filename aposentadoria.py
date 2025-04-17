@@ -117,6 +117,12 @@ def main(page: ft.Page):
             resultado = valor_salario * (percentual / 100)
             print(f"{valor_contribuicao}% de {valor_salario} é {resultado}")
             txt_resultado.value = resultado
+        # Caso seja feminino
+        elif valor_contribuicao > 15 and valor_genero == 'Feminino':
+            percentual = 60 + (valor_contribuicao - 15) * 2
+            resultado = valor_salario * (percentual / 100)
+            print(f"{valor_contribuicao}% de {valor_salario} é {resultado}")
+            txt_resultado.value = resultado
         page.update()
         page.go('/sim_resultados_contribuicao')
 
