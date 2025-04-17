@@ -98,7 +98,7 @@ def main(page: ft.Page):
             print(f"{valor_idade}% de {valor_salario} é {resultado}")
             txt_resultado.value = resultado
         # Caso seja feminino
-        elif valor_idade > 65 and valor_genero == 'Feminino':
+        elif valor_idade > 62 and valor_genero == 'Feminino':
             percentual = 60 + (valor_idade - 15) * 2
             resultado = valor_salario * (percentual / 100)
             print(f"{valor_idade}% de {valor_salario} é {resultado}")
@@ -112,13 +112,13 @@ def main(page: ft.Page):
         valor_contribuicao = int(tempo_contribuicao.value)
         valor_salario = int(media_salarial.value)
         # Caso seja masculino
-        if valor_contribuicao > 15 and valor_genero == 'Masculino':
+        if valor_contribuicao > 35 and valor_genero == 'Masculino':
             percentual = 60 + (valor_contribuicao - 15) * 2
             resultado = valor_salario * (percentual / 100)
             print(f"{valor_contribuicao}% de {valor_salario} é {resultado}")
             txt_resultado.value = resultado
         # Caso seja feminino
-        elif valor_contribuicao > 15 and valor_genero == 'Feminino':
+        elif valor_contribuicao > 30 and valor_genero == 'Feminino':
             percentual = 60 + (valor_contribuicao - 15) * 2
             resultado = valor_salario * (percentual / 100)
             print(f"{valor_contribuicao}% de {valor_salario} é {resultado}")
