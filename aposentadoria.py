@@ -118,13 +118,21 @@ def main(page: ft.Page):
                 print(f"{valor_idade}% de {valor_salario} é {resultado}")
                 txt_resultado.value = resultado
                 txt_data_aposentadoria.value = f'Você poderá se aposentar em: {data_aposentadoria}'
+
         else:
             # Caso seja feminino
-            if valor_idade > 62 and valor_genero == 'Feminino':
+            if valor_idade > 62:
                 percentual = 60 + (valor_idade - 15) * 2
                 resultado = valor_salario * (percentual / 100)
                 print(f"{valor_idade}% de {valor_salario} é {resultado}")
                 txt_resultado.value = resultado
+            # Caso seja feminino e não possa apresentar
+            elif valor_idade < 62:
+                percentual = 60 + (valor_idade - 15) * 2
+                resultado = valor_salario * (percentual / 100)
+                print(f"{valor_idade}% de {valor_salario} é {resultado}")
+                txt_resultado.value = resultado
+                txt_data_aposentadoria.value = f'Você poderá se aposentar em: {data_aposentadoria}'
 
         page.update()
         page.go('/sim_resultados_idade')
@@ -144,8 +152,8 @@ def main(page: ft.Page):
                 print(f"{valor_contribuicao}% de {valor_salario} é {resultado}")
                 txt_resultado.value = resultado
 
-        # Caso seja feminino
         else:
+            # Caso seja feminino
             if valor_contribuicao > 30:
                 percentual = 60 + (valor_contribuicao - 15) * 2
                 resultado = valor_salario * (percentual / 100)
