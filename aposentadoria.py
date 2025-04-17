@@ -6,7 +6,6 @@ from flet.core.elevated_button import ElevatedButton
 from flet.core.text import Text
 from flet.core.view import View
 
-
 # Configuração inicial.
 def main(page: ft.Page):
     page.title = 'Aposentadoria'
@@ -89,23 +88,35 @@ def main(page: ft.Page):
 
     # Calculo da idade
     def calcu(e):
+        valor_genero = menu.value
         valor_idade = int(input_idade.value)
         valor_salario = int(media_salarial.value)
-        percentual = 60 + max(0,(valor_idade - 15) * 2)
-        resultado = valor_salario * (percentual / 100)
-        print(f"{valor_idade}% de {valor_salario} é {resultado}")
-        txt_resultado.value = resultado
+        # Caso seja masculino
+        if valor_idade > 65 and valor_genero == 'Masculino':
+            percentual = 60 + (valor_idade - 15) * 2
+            resultado = valor_salario * (percentual / 100)
+            print(f"{valor_idade}% de {valor_salario} é {resultado}")
+            txt_resultado.value = resultado
+        # Caso seja feminino
+        elif valor_idade > 65 and valor_genero == 'Feminino':
+            percentual = 60 + (valor_idade - 15) * 2
+            resultado = valor_salario * (percentual / 100)
+            print(f"{valor_idade}% de {valor_salario} é {resultado}")
+            txt_resultado.value = resultado
         page.update()
         page.go('/sim_resultados_idade')
 
     # Calculo do tempo de contribuição
     def calcu_tempo_contribuicao(e):
+        valor_genero = menu.value
         valor_contribuicao = int(tempo_contribuicao.value)
         valor_salario = int(media_salarial.value)
-        percentual = 60 + max(0, (valor_contribuicao - 15) * 2)
-        resultado = valor_salario * (percentual / 100)
-        print(f"{valor_contribuicao}% de {valor_salario} é {resultado}")
-        txt_resultado.value = resultado
+        # Caso seja masculino
+        if valor_contribuicao > 15 and valor_genero == 'Masculino':
+            percentual = 60 + (valor_contribuicao - 15) * 2
+            resultado = valor_salario * (percentual / 100)
+            print(f"{valor_contribuicao}% de {valor_salario} é {resultado}")
+            txt_resultado.value = resultado
         page.update()
         page.go('/sim_resultados_contribuicao')
 
