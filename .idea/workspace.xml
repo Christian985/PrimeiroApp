@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b21cb967-f784-49a6-8fc1-f9b716953db8" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/lista.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lista_exer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lista_exer.py" beforeDir="false" afterPath="$PROJECT_DIR$/lista_exer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,15 +106,7 @@
       <workItem from="1744368977152" duration="145000" />
       <workItem from="1744376479180" duration="10786000" />
       <workItem from="1744888699319" duration="22426000" />
-      <workItem from="1745492127445" duration="4417000" />
-    </task>
-    <task id="LOCAL-00007" summary="commit">
-      <option name="closed" value="true" />
-      <created>1743162012354</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1743162012354</updated>
+      <workItem from="1745492127445" duration="5126000" />
     </task>
     <task id="LOCAL-00008" summary="commit">
       <option name="closed" value="true" />
@@ -501,7 +492,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745492170144</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="commit">
+      <option name="closed" value="true" />
+      <created>1745501169243</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1745501169243</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -517,7 +516,7 @@
     <SUITE FILE_PATH="coverage/PrimeiroApp$transicao_app.coverage" NAME="transicao_app Coverage Results" MODIFIED="1743180084499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PrimeiroApp$main_usuario.coverage" NAME="main_usuario Coverage Results" MODIFIED="1743178442682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PrimeiroApp$main4.coverage" NAME="main4 Coverage Results" MODIFIED="1742575673928" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/PrimeiroApp$lista_exer.coverage" NAME="lista_exer Coverage Results" MODIFIED="1745500747135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PrimeiroApp$lista_exer.coverage" NAME="lista_exer Coverage Results" MODIFIED="1745501151877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PrimeiroApp$main3.coverage" NAME="main3 Coverage Results" MODIFIED="1742565839612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PrimeiroApp$lista.coverage" NAME="lista Coverage Results" MODIFIED="1745498279088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PrimeiroApp$main_par_impar.coverage" NAME="main_par_impar Coverage Results" MODIFIED="1743177862390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
